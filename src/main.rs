@@ -3,18 +3,23 @@ struct Process {
     state: State,
     input: String,
     output: String,
-    memory: String,
-    priority: usize
+    memory: Vec<u8>,
+    priority: usize,
 }
 
 enum State {
     Running,
     Ready,
-    Blocked
+    Blocked,
 }
 
-
-
 fn main() {
-    println!("Hello, world!");
+    let process = Process {
+        instructions: String::from(""),
+        state: State::Ready,
+        input: String::from(""),
+        output: String::from(""),
+        memory: Vec::new(),
+        priority: 0,
+    };
 }
